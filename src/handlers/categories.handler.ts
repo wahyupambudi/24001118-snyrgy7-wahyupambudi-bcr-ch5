@@ -39,8 +39,8 @@ const handleCreateCategorie = async (req: Request, res: Response) => {
         return;
     } catch (err) {
         console.log(err)
-        res.status(400).json({
-            message: "Data Is Not Null!"
+        res.status(500).json({
+            message: "Internal Server Error"
         })
         return;
     }
@@ -51,7 +51,8 @@ const handlePutCategorie = async (req: Request, res: Response) => {
     const getBody = req.body;
     try {
         await CategoriesModel.query().findById(Number(id)).throwIfNotFound().patch(getBody)
-        const categories = await CategoriesModel.query().orderBy('id');
+        const categories = await CategoriesModel.query().findById(Number(id)).throwIfNotFound();
+
         res.status(200).json({
             message: "Success",
             categories

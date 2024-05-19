@@ -44,8 +44,9 @@ const handleCreateTransmission = async (req: Request, res: Response) => {
         })
         return;
     } catch (err) {
-        res.status(400).json({
-            message: "Data Is Not Null!"
+        console.log(err)
+        res.status(500).json({
+            message: "Internal Server Error"
         })
         return;
     }
@@ -56,7 +57,7 @@ const handlePutTransmission = async (req: Request, res: Response) => {
     const getBody = req.body;
     try {
         await TransmissionsModel.query().findById(Number(id)).throwIfNotFound().patch(getBody)
-        const transmissions = await TransmissionsModel.query().orderBy('id');
+        const transmissions = await TransmissionsModel.query().findById(Number(id)).throwIfNotFound();
         res.status(200).json({
             message: "Success",
             transmissions

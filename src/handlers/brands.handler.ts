@@ -39,8 +39,8 @@ const handleCreateBrand = async (req: Request, res: Response) => {
         return;
     } catch (err) {
         console.log(err)
-        res.status(400).json({
-            message: "Data Is Not Null!"
+        res.status(500).json({
+            message: "Internal Server Error"
         })
         return;
     }
@@ -51,7 +51,8 @@ const handlePutBrand = async (req: Request, res: Response) => {
     const getBody = req.body;
     try {
         await BrandsModel.query().findById(Number(id)).throwIfNotFound().patch(getBody)
-        const brands = await BrandsModel.query().orderBy('id');
+        const brands = await BrandsModel.query().findById(Number(id)).throwIfNotFound();
+
         res.status(200).json({
             message: "Success",
             brands

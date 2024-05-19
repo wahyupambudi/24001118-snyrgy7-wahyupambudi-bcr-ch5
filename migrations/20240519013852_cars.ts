@@ -13,9 +13,9 @@ export async function up(knex: Knex): Promise<void> {
         table.integer('transmission_id', 10).notNullable().references('id').inTable("transmissions").onDelete("Cascade"),
         table.integer('brand_id', 10).notNullable().references('id').inTable("brands").onDelete("Cascade"),
         table.integer('category_id', 10).notNullable().references('id').inTable("categories").onDelete("Cascade"),
-        // table.timestamp('createdAt').notNullable().defaultTo(knex.fn.now()),
-        // table.timestamp('updatedAt').notNullable().defaultTo(knex.fn.now())
-        table.timestamps(true, true)
+        table.timestamp('createdAt').notNullable(),
+        table.timestamp('updatedAt').notNullable()
+        // table.timestamps(true, true)
     })
 }
 

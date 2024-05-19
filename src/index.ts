@@ -26,11 +26,8 @@ const knexInstance = knex({
 Model.knex(knexInstance);
 
 app.use(express.json());
-app.use(
-    express.urlencoded({
-        extended: true,
-    }),
-);
+app.use(express.urlencoded({extended: true}));
+
 app.use("/cars", carsRouter);
 app.use("/brands", brandsRouter);
 app.use("/categories", categoriesRouter);

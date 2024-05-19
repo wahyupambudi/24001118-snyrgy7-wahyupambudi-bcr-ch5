@@ -9,6 +9,7 @@ export async function up(knex: Knex): Promise<void> {
         table.boolean('avaibility').notNullable().defaultTo(false),
         table.string('start_rent', 20).notNullable(),
         table.string('end_rent', 20).notNullable(),
+        table.string('img', 100).notNullable(),
         table.integer('transmission_id', 10).notNullable().references('id').inTable("transmissions").onDelete("Cascade"),
         table.integer('brand_id', 10).notNullable().references('id').inTable("brands").onDelete("Cascade"),
         table.integer('category_id', 10).notNullable().references('id').inTable("categories").onDelete("Cascade")

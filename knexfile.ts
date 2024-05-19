@@ -1,4 +1,6 @@
 import type { Knex } from "knex";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Update with your config settings.
 
@@ -7,9 +9,9 @@ const config: { [key: string]: Knex.Config } = {
     client: "postgresql",
     connection: {
       // filename: "./dev.sqlite3"
-      database: "bcr_ch_5",
-      user: "postgres",
-      password: "dokonjou"
+      database: process.env.DATABASE,
+      user: process.env.USER,
+      password: process.env.PASSWORD
     }
   },
 

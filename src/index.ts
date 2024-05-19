@@ -16,9 +16,9 @@ const port = process.env.PORT || 8080;
 const knexInstance = knex({
     client: "pg",
     connection: {
-        database: "bcr_ch_5",
-        user: "postgres",
-        password: "dokonjou",
+        database: process.env.DATABASE,
+        user: process.env.USER,
+        password: process.env.PASSWORD,
         port: 5432
     }
 })

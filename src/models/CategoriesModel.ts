@@ -5,7 +5,7 @@ export class CategoriesModel extends Model {
     category_name!: string;
 
     static get tableName() {
-        return "transmissions"
+        return "categories"
     }
 }
 

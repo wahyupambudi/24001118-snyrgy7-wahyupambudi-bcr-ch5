@@ -1,5 +1,8 @@
 import express, { Express } from 'express';
 import dotenv from "dotenv";
+import categoriesRouter from "./routes/categories.routes"
+import transmissionsRouter from "./routes/transmissions.routes"
+import brandsRouter from "./routes/brands.routes"
 import carsRouter from "./routes/cars.routes"
 import knex from "knex";
 import {Model} from "objection";
@@ -29,6 +32,9 @@ app.use(
     }),
 );
 app.use("/cars", carsRouter);
+app.use("/brands", brandsRouter);
+app.use("/categories", categoriesRouter);
+app.use("/transmissions", transmissionsRouter);
 
 app.get("/", (req, res) => {
     res.status(200).json({

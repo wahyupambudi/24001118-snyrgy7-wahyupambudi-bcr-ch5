@@ -1,9 +1,9 @@
 import {Router, Request, Response} from "express";
-const {handleListCars} = require("../handlers/cars.handler")
+const {handleListCategories} = require("../handlers/categories.handler")
 
 const router = Router();
 
 // method Get
-router.get("/", handleListCars)
+router.get("/", handleListCategories)
 
 export default router;

@@ -12,7 +12,9 @@ export async function up(knex: Knex): Promise<void> {
         table.string('img', 100).notNullable(),
         table.integer('transmission_id', 10).notNullable().references('id').inTable("transmissions").onDelete("Cascade"),
         table.integer('brand_id', 10).notNullable().references('id').inTable("brands").onDelete("Cascade"),
-        table.integer('category_id', 10).notNullable().references('id').inTable("categories").onDelete("Cascade")
+        table.integer('category_id', 10).notNullable().references('id').inTable("categories").onDelete("Cascade"),
+        table.timestamp('createdAt').notNullable(),
+        table.timestamp('updatedAt').notNullable()
     })
 }
 
@@ -20,4 +22,3 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
     return knex.schema.dropTable("cars")
 }
-

@@ -1,12 +1,26 @@
 import express, { Express } from 'express';
 import dotenv from "dotenv";
 import carsRouter from "./routes/cars.routes"
+import knex from "knex";
+import {Model} from "objection";
 
 // call function dotenv;
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 8080;
+
+const knexInstance = knex({
+    client: "pg",
+    connection: {
+        database: "bcr_ch_5",
+        user: "postgres",
+        password: "dokonjou",
+        port: 5432
+    }
+})
+
+Model.knex(knexInstance);
 
 app.use(express.json());
 app.use(

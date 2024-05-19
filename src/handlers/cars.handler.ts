@@ -148,12 +148,14 @@ const handlePutCar = async (req: Request, res: Response) => {
 }
 const handleDeleteCar = async (req: Request, res: Response) => {
     const id: Number = Number(req.params.id);
+    const cars = await CarsModel.query().findById(Number(id)).throwIfNotFound();
+    // await cloudinary.uploader.destroy('bcr-ch5/kr2docjmwfy6ru2tdkcx')
     try {
         await CarsModel.query().deleteById(Number(id)).throwIfNotFound();
-        const brands = await CarsModel.query().orderBy('id');
+        const cars = await CarsModel.query().orderBy('id');
         res.status(200).json({
             message: "Success",
-            brands
+            cars
         })
         return;
     } catch (err) {

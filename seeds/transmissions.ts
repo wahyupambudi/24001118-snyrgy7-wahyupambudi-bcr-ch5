@@ -6,9 +6,9 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Inserts seed entries
     await knex("transmissions").insert([
-        { id: 1, transmission_name: "Manual" },
-        { id: 2, transmission_name: "Automatic" },
-        { id: 3, transmission_name: "AutoManual" },
-        { id: 4, transmission_name: "CVT" }
+        { transmission_name: "Manual" },
+        { transmission_name: "Automatic" },
+        { transmission_name: "AutoManual" },
+        { transmission_name: "CVT" }
     ]);
 };

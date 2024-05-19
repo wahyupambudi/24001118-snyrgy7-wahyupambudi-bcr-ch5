@@ -6,8 +6,8 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Inserts seed entries
     await knex("brands").insert([
-        { id: 1, brand_name: "Honda" },
-        { id: 2, brand_name: "Tesla" },
-        { id: 3, brand_name: "Toyota" }
+        {brand_name: "Honda" },
+        {brand_name: "Tesla" },
+        {brand_name: "Toyota" }
     ]);
 };

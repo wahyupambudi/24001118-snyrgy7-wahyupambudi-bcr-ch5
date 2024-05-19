@@ -6,8 +6,8 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Inserts seed entries
     await knex("categories").insert([
-        { id: 1, category_name: "small" },
-        { id: 2, category_name: "medium" },
-        { id: 3, category_name: "big" }
+        { category_name: "small" },
+        { category_name: "medium" },
+        { category_name: "big" }
     ]);
 };

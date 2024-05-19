@@ -73,8 +73,10 @@ const handleDeleteTransmission = async (req: Request, res: Response) => {
     const id: Number = Number(req.params.id);
     try {
         await TransmissionsModel.query().deleteById(Number(id)).throwIfNotFound();
+        const transmissions = await TransmissionsModel.query().orderBy('id');
         res.status(200).json({
             message: "Success",
+            transmissions
         })
         return;
     } catch (err) {

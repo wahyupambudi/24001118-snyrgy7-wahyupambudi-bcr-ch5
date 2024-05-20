@@ -80,9 +80,8 @@ The REST API for cars
 ### Response
     {
         "message": "Success",
-        "car": {
-            "id": 1,
-            data
+        "cars": {
+            dataCar
         }
     }
 

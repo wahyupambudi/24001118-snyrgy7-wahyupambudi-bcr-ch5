@@ -5,7 +5,7 @@ Challenge Chapter 5 - REST API Binar Car Rental with Express Js, Typescript, Pos
 1. Clone project into your local `git clone https://github.com/wahyupambudi/24001118-snyrgy7-wahyupambudi-bcr-ch5.git`
 2. Change directory to this project folder `cd 24001118-snyrgy7-wahyupambudi-bcr-ch5`
 3. Use command `npm install` to install all packages
-4. Copy `.env.example` file to `.env` and fill up the correct value of your PostgreSQL connection!
+4. Copy `.env.example` file to `.env` and fill up the correct value of your PostgreSQL connection and cloudinary secret key!
 5. Run command `npm run migration:latest` to create table via migration
 6. Run command `npm run dev`
 

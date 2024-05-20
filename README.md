@@ -5,7 +5,11 @@ Challenge Chapter 5 - REST API Binar Car Rental with Express Js, Typescript, Pos
     bundle install
 
 # REST API
-The REST API for cars   
+The REST API for Binar Car Rental
+- CRUD Transmissions
+- CRUD Brands
+- CRUD Categories
+- CRUD Cars
 
 ## Get All Cars
 ### Request

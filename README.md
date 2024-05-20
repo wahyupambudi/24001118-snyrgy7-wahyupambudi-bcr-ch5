@@ -16,6 +16,7 @@ The REST API for Binar Car Rental
 - CRUD Categories
 - CRUD Cars
 
+# CRUD CARS
 ## Get All Cars
 ### Request
 `GET /cars/`
@@ -91,6 +92,243 @@ The REST API for Binar Car Rental
         "message": "Success",
         "cars": {
             dataCar
+        }
+    }
+
+# CRUD Transmissions
+## Get All Transmissions
+### Request
+`GET /transmissions/`
+
+    curl -L -X GET "localhost:3000/transmissions/"
+
+### Response
+    {
+        "message": "Success",
+        "transmissions": [
+            {
+                "id": 1,
+                data
+            },
+            {
+                "id": 2,
+                data
+            }
+        ]
+    }
+
+## Get Transmission By Id
+### Request
+`GET /transmissions/:id`
+
+    curl -L -X GET "localhost:3000/transmissions/1"
+
+### Response
+    {
+        "message": "Success",
+        "car": {
+            "id": 1,
+            data
+        }
+    }
+
+## Create New Transmission
+### Request
+`POST /transmissions/add`
+
+    curl -L -X POST "localhost:3000/transmissions/add" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "transmission_name=Automatic"
+
+### Response
+    {
+        "message": "Success",
+        "transmissions": {
+           data
+        }
+    }
+
+## Update Transmission
+### Request
+`PUT /transmissions/update/:id`
+
+    curl -L -X PUT "localhost:3000/transmissions/update/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "transmission_name=Automatic Update"
+
+### Response
+    {
+        "message": "Success",
+        "transmissions": {
+           data
+        }
+    }
+
+## Delete Transmission
+### Request
+`DELETE /transmissions/:id`
+
+    curl -L -X DELETE "localhost:3000/transmissions/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "="
+
+### Response
+    {
+        "message": "Success",
+        "transmissions": {
+            data
+        }
+    }
+
+# CRUD Brands
+## Get All Brands
+### Request
+`GET /brands/`
+
+    curl -L -X GET "localhost:3000/brands/"
+
+### Response
+    {
+        "message": "Success",
+        "brands": [
+            {
+                "id": 1,
+                data
+            },
+            {
+                "id": 2,
+                data
+            }
+        ]
+    }
+
+## Get Brand By Id
+### Request
+`GET /brands/:id`
+
+    curl -L -X GET "localhost:3000/brands/1"
+
+### Response
+    {
+        "message": "Success",
+        "car": {
+            "id": 1,
+            data
+        }
+    }
+
+## Create New Brand
+### Request
+`POST /brands/add`
+
+    curl -L -X POST "localhost:3000/brands/add" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "brand_name=Automatic"
+
+### Response
+    {
+        "message": "Success",
+        "brands": {
+           data
+        }
+    }
+
+## Update Brand
+### Request
+`PUT /brands/update/:id`
+
+    curl -L -X PUT "localhost:3000/brands/update/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "brand_name=Automatic Update"
+
+### Response
+    {
+        "message": "Success",
+        "brands": {
+           data
+        }
+    }
+
+## Delete Brand
+### Request
+`DELETE /brands/:id`
+
+    curl -L -X DELETE "localhost:3000/brands/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "="
+
+### Response
+    {
+        "message": "Success",
+        "brands": {
+            data
+        }
+    }
+
+# CRUD Categories
+## Get All Categories
+### Request
+`GET /categories/`
+
+    curl -L -X GET "localhost:3000/categories/"
+
+### Response
+    {
+        "message": "Success",
+        "categories": [
+            {
+                "id": 1,
+                data
+            },
+            {
+                "id": 2,
+                data
+            }
+        ]
+    }
+
+## Get Category By Id
+### Request
+`GET /categories/:id`
+
+    curl -L -X GET "localhost:3000/categories/1"
+
+### Response
+    {
+        "message": "Success",
+        "car": {
+            "id": 1,
+            data
+        }
+    }
+
+## Create New Category
+### Request
+`POST /categories/add`
+
+    curl -L -X POST "localhost:3000/categories/add" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "category_name=Automatic"
+
+### Response
+    {
+        "message": "Success",
+        "categories": {
+           data
+        }
+    }
+
+## Update Category
+### Request
+`PUT /categories/update/:id`
+
+    curl -L -X PUT "localhost:3000/categories/update/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "category_name=Automatic Update"
+
+### Response
+    {
+        "message": "Success",
+        "categories": {
+           data
+        }
+    }
+
+## Delete Category
+### Request
+`DELETE /categories/:id`
+
+    curl -L -X DELETE "localhost:3000/categories/8" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: insomnia/9.1.1" -d "="
+
+### Response
+    {
+        "message": "Success",
+        "categories": {
+            data
         }
     }
 

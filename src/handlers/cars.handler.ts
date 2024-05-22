@@ -1,15 +1,18 @@
 import {Request, Response} from "express";
 import { CarsModel } from "../models/CarsModel";
-import carImg  from "../middleware/multer";
+// import carImg  from "../middleware/multer";
 const cloudinary = require('../config/cloudinary.ts')
 
 
 const handleListCars = async (_req: Request, res: Response) => {
     const cars = await CarsModel.query().orderBy('id');
-    res.status(200).json({
-        message: "Success",
-        cars
-    })
+    // res.status(200).json({
+    //     message: "Success",
+    //     cars
+    // })
+    const data = {car: JSON.parse(JSON.stringify(cars))};
+    res.render("./index", data)
+
 }
 
 const handleCarsById = async (req: Request, res: Response) => {

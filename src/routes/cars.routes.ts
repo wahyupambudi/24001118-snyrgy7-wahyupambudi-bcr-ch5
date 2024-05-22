@@ -10,6 +10,7 @@ const {
 
 const router = Router();
 
+// /v1/cars -> controller/handler -> models -> views
 // method Get
 router.get("/", handleListCars)
 router.get("/:id", handleCarsById)

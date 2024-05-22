@@ -25,6 +25,10 @@ const knexInstance = knex({
 
 Model.knex(knexInstance);
 
+app.set('view engine', 'hbs');
+app.engine('html', require('hbs').__express);
+app.set("views", "src/views");
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 

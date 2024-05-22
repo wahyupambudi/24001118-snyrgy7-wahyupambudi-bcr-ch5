@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Binar CH 6 Design Pattern</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Data</p>
+    <table border="1px" style="border-collapse: collapse;" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Avaibility</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each car}}
+            <tr>
+                <td>{{this.car_name}}</td>
+                <td>{{this.avaibility}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
